@@ -9,11 +9,11 @@ Requirements: Node.js 22.13 or newer and pnpm 11.25.0.
 ```sh
 corepack enable
 pnpm install --frozen-lockfile
-pnpm exec wrangler d1 execute site-creator-d1 --config wrangler.local.jsonc --local --persist-to .wrangler/state --file backend/drizzle/0000_sticky_squadron_supreme.sql
-pnpm dev
+npm run db:local
+npm run dev
 ```
 
-Open http://localhost:5173. The Wrangler configuration uses a placeholder database ID and local persistence; it does not connect to the production database.
+The `db:local` command initializes the local `rooms` table and is safe to repeat. Open http://localhost:5173 after starting the development server. The Wrangler configuration uses a placeholder database ID and local persistence; it does not connect to the production database.
 
 ## Architecture
 

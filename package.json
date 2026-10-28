@@ -14,6 +14,7 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint frontend backend/server/game/*.mjs backend/worker/index.ts backend/db/schema.ts shared tests vite.config.ts next.config.ts drizzle.config.ts cloudflare-env.d.ts",
     "check": "node --test tests/*.test.mjs && eslint frontend backend/server/game/*.mjs backend/worker/index.ts backend/db/schema.ts shared tests vite.config.ts next.config.ts drizzle.config.ts cloudflare-env.d.ts && tsc --noEmit && node scripts/run-framework.mjs build",
+    "db:local": "node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute site-creator-d1 --config wrangler.local.jsonc --local --persist-to .wrangler/state --file backend/drizzle/0000_sticky_squadron_supreme.sql",
     "db:generate": "drizzle-kit generate"
   },
   "dependencies": {
